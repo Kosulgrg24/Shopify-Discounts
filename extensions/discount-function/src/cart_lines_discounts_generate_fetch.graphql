@@ -1,0 +1,6 @@
+query InputCartFetch {
+  fetchResult {
+    jsonBody
+    status
+  }
+}

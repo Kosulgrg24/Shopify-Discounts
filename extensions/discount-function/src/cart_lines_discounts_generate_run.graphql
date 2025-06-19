@@ -1,5 +1,26 @@
-query CartInput {
+# query CartInput {
+#   cart {
+#     lines {
+#       id
+#       cost {
+#         subtotalAmount {
+#           amount
+#         }
+#       }
+#     }
+#   }
+# }
+
+# [START discount-function.graphql.cart.run]
+query InputCartRun {
+  fetchResult {
+    jsonBody
+    status
+  }
   cart {
+    buyerIdentity {
+      email
+    }
     lines {
       id
       cost {
@@ -13,3 +34,5 @@ query CartInput {
     discountClasses
   }
 }
+
+# [END discount-function.graphql.run.cart]
