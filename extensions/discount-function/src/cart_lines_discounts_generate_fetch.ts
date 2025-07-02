@@ -8,12 +8,12 @@ export function cartLinesDiscountsGenerateFetch(
   input: InputCartFetch
 ): CartLinesDiscountsGenerateFetchResult {
   const request: CartLinesDiscountsGenerateFetchResult["request"] = {
-    headers: [{ name: "accept", value: "application/json" }],
+    headers: [],
     method: HttpRequestMethod.Get,
     policy: {
       readTimeoutMs: 5000,
     },
-    url: "https://5f36-2400-74e0-0-3a7f-498a-d68c-ebc7-2232.ngrok-free.app/",
+    url: "https://afac-2400-74e0-0-3a7f-8187-9f97-5fe8-7c57.ngrok-free.app/api",
   };
   return { request };
 }

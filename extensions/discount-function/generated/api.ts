@@ -3072,9 +3072,9 @@ export type DeliveryInput = { __typename?: 'Input', cart: { __typename?: 'Cart',
 export type InputCartFetchVariables = Exact<{ [key: string]: never; }>;
 
 
-export type InputCartFetch = { __typename?: 'Input', fetchResult?: { __typename?: 'HttpResponse', jsonBody?: any | null, status: number } | null };
+export type InputCartFetch = { __typename?: 'Input', cart: { __typename?: 'Cart', lines: Array<{ __typename?: 'CartLine', id: string, cost: { __typename?: 'CartLineCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any } } }>, buyerIdentity?: { __typename?: 'BuyerIdentity', email?: string | null } | null } };
 
 export type InputCartRunVariables = Exact<{ [key: string]: never; }>;
 
 
-export type InputCartRun = { __typename?: 'Input', fetchResult?: { __typename?: 'HttpResponse', jsonBody?: any | null, status: number } | null, cart: { __typename?: 'Cart', buyerIdentity?: { __typename?: 'BuyerIdentity', email?: string | null } | null, lines: Array<{ __typename?: 'CartLine', id: string, cost: { __typename?: 'CartLineCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any } } }> }, discount: { __typename?: 'Discount', discountClasses: Array<DiscountClass> } };
+export type InputCartRun = { __typename?: 'Input', cart: { __typename?: 'Cart', buyerIdentity?: { __typename?: 'BuyerIdentity', email?: string | null, customer?: { __typename?: 'Customer', id: string, numberOfOrders: number, amountSpent: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode }, metafield?: { __typename?: 'Metafield', value: string, type: string } | null } | null } | null, lines: Array<{ __typename?: 'CartLine', id: string, cost: { __typename?: 'CartLineCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any } } }> }, discount: { __typename?: 'Discount', discountClasses: Array<DiscountClass> }, shop: { __typename?: 'Shop', metafield?: { __typename?: 'Metafield', value: string, type: string } | null } };

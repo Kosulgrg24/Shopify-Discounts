@@ -1,25 +1,19 @@
-# query CartInput {
-#   cart {
-#     lines {
-#       id
-#       cost {
-#         subtotalAmount {
-#           amount
-#         }
-#       }
-#     }
-#   }
-# }
-
-# [START discount-function.graphql.cart.run]
 query InputCartRun {
-  fetchResult {
-    jsonBody
-    status
-  }
   cart {
     buyerIdentity {
       email
+      customer {
+        id
+        numberOfOrders
+        amountSpent {
+          amount
+          currencyCode
+        }
+        metafield(namespace: "custom", key: "tags") {
+          value
+          type
+        }
+      }
     }
     lines {
       id
@@ -33,6 +27,10 @@ query InputCartRun {
   discount {
     discountClasses
   }
+  shop {
+    metafield(namespace: "custom", key: "tags") {
+      value
+      type
+    }
+  }
 }
-
-# [END discount-function.graphql.run.cart]

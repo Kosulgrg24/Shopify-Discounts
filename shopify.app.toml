@@ -3,7 +3,7 @@
 client_id = "de69ee6f54aba64df330a98452a76338"
 name = "newdiscounts"
 handle = "discounts-195"
-application_url = "https://shopify.dev/apps/default-app-home" 
+application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
 [build]
@@ -13,21 +13,11 @@ include_config_on_deploy = true
 api_version = "2025-04"
 
 [access_scopes]
-scopes = "write_discounts"
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_discounts,read_customers,read_orders"
 
 [auth]
-redirect_urls = [
-  "https://shopify.dev/apps/default-app-home/api/auth"  
-]
+redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
 
 [pos]
 embedded = false
-
-[[extensions]]
-type = "discount"
-name = "Cart Discounts"
-handle = "cart-discounts"
-path = "extensions/cart-discounts"
-
-  [extensions.configuration]
-  network_access = true  
